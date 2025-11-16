@@ -26,6 +26,7 @@ const Page = () => {
       <PalettePage
         paletteImages={paletteImages}
         nextTone="/basic/undertone-1"
+        description="Please identify with natural bright light"
       />
     </div>
   );

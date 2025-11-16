@@ -7,6 +7,7 @@ import { useState } from "react";
 interface PalettePageProps {
   paletteImages: string[];
   nextTone: string;
+  description?: string;
 }
 
 const getColorFromFilename = (path: string) => {
@@ -14,7 +15,11 @@ const getColorFromFilename = (path: string) => {
   return `#${name}`;
 };
 
-const PalettePage = ({ paletteImages, nextTone }: PalettePageProps) => {
+const PalettePage = ({
+  paletteImages,
+  nextTone,
+  description,
+}: PalettePageProps) => {
   const [capturedImg] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("captured-image");
@@ -44,7 +49,7 @@ const PalettePage = ({ paletteImages, nextTone }: PalettePageProps) => {
           </div>
 
           <div className="w-full bg-[#C36262] text-white text-center text-xs py-2 mt-4 rounded-md font-semibold">
-            Please identify with natural bright light
+            {description}
           </div>
 
           <div className="grid grid-cols-4 gap-4 mt-6">

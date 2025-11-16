@@ -16,6 +16,7 @@ const Page = () => {
       <PalettePage
         paletteImages={paletteImages}
         nextTone="/basic/undertone-1"
+        description="Choose a color that makes your skin brighter and softens the color around your dark circles & smile lines"
       />
     </div>
   );
