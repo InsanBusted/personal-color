@@ -1,4 +1,4 @@
-import Captured from "@/components/ui/Captured";
+import Captured from "@/components/basic/Captured";
 
 const Page = () => {
   return (
