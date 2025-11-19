@@ -15,7 +15,7 @@ const Page = () => {
   return (
     <div className="relative min-h-screen bg-main flex items-center justify-center text-center">
       <div className="flex flex-col items-center justify-center gap-6 px-6">
-        <Heading />
+        <Heading size="md"/>
 
         <h1 className="text-white font-bold text-4xl md:text-3xl leading-tight">
           TIPS FOR IDEAL

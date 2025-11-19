@@ -14,6 +14,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import { saveToCookies } from "@/lib/utils/cookies";
 
 const ContactForm = () => {
   const router = useRouter();
@@ -28,6 +29,8 @@ const ContactForm = () => {
   });
 
   const onSubmit = (data: ContactSchemaType) => {
+    saveToCookies("contact-data", data);
+
     router.push("/basic/result-template");
 
     console.log("Form submit:", data);

@@ -90,6 +90,28 @@
 .bg-main {
   background: linear-gradient(180deg, #d7a9c7 0%, #f6a1b2 40%, #d05a80 100%);
 }
+.bg-card-main {
+  background: radial-gradient(
+      circle at top left,
+      #b7c7e8 0%,
+      #e5e6e7 25%,
+      transparent 60%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      #f8b7a2 0%,
+      #f3a48e 40%,
+      #e49282 65%,
+      transparent 85%
+    ),
+    linear-gradient(140deg, #f7e7cf 0%, #f8d0b7 35%, #e5a4a6 70%, #cf8088 100%);
+
+  background-size: cover;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.15),
+    inset 0 0 40px rgba(255, 255, 255, 0.2);
+
+  border-radius: 24px;
+}
 
 .bg-component {
   @apply bg-[#7D4754] shadow-[0_4px_10px_rgba(0,0,0,0.25)];

@@ -4,7 +4,7 @@ import Heading from "@/components/ui/Heading";
 const Page = () => {
   return (
     <div className="bg-main min-h-screen flex flex-col justify-center items-center">
-      <Heading />
+      <Heading size="md"/>
 
       <div>
         <ContactForm />
