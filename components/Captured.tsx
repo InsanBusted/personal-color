@@ -20,27 +20,18 @@ const Captured = () => {
     let stream: MediaStream | null = null;
     const videoEl = videoRef.current;
 
-    navigator.mediaDevices
-      .getUserMedia({
-        video: {
-          facingMode: "user",
-          width: { ideal: 1080 },
-          height: { ideal: 1920 },
-        },
-        audio: false,
-      })
-      .then((s) => {
-        stream = s;
-        if (videoEl) {
-          videoEl.srcObject = stream;
-        }
-      })
-      .catch((err) => {
-        console.error("Safari getUserMedia error:", err);
-      });
+    navigator.mediaDevices.getUserMedia({ video: true }).then((s) => {
+      stream = s;
+      if (videoEl) {
+        videoEl.srcObject = stream;
+      }
+    });
 
     return () => {
-      stream?.getTracks().forEach((t) => t.stop());
+      if (stream) {
+        stream.getTracks().forEach((t) => t.stop());
+        stream.getVideoTracks().forEach((t) => t.stop());
+      }
       if (videoEl) videoEl.srcObject = null;
     };
   }, [mode]);
